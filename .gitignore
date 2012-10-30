@@ -1,0 +1,20 @@
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+*resharper.user
+# Visual Studio
+[Bb]in
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+*.sln.cache
+*.suo
+*.csproj.user
+
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+
+# mstest test results
+TestResults
+
+# mstest test results
+TestResults

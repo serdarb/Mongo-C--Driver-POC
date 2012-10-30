@@ -1,0 +1,41 @@
+﻿@model MongoSample.Web.Models.BasketModel
+@{
+    ViewBag.Title = "MongoSampleWithC#";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                This is the sample basket
+            </p>
+        </div>
+    </section>
+}
+<h3>Basket Items List</h3>
+<ol class="round">
+
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            <h5>@item.ProductName</h5>
+            <br />
+            @item.Price, @item.Quantity
+            <br />
+        </li>
+    }
+</ol>
+<br />
+<strong>Total Amount :</strong> <strong style="color: red;">@Model.Items.Sum(x => (x.Price * x.Quantity))</strong>
+
+<br />
+<br />
+
+<form action="/home/basket/clear" method="post">
+    <input type="submit" name="btnClear" value="Clear Basket" />
+</form>
+
+

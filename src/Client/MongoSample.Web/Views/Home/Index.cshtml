@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "MongoSampleWithC#";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>(@ViewBag.Message)</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<br />
+<p>this is a product sample, when you click "add to basket" button a sample product will be added to mongo db prowered basket</p>
+<br />
+<div style="border: 3px solid red; padding: 7px;">
+
+    <strong>Test Product (1)</strong>
+    <p>
+        <strong>Price :</strong> 10 $,<br />
+        <strong>Quantity :</strong> 1,<br />
+    </p>
+    <form action="/home/basket" method="get">
+        <input type="submit" name="addtobasket" value="Add to basket" />
+    </form>
+</div>
+
+
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        To start with mongodb c# driver... visit mongodb's official site.
+        <a href="http://www.mongodb.org/display/DOCS/CSharp+Driver+Tutorial">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Presentation</h5>
+        You can check out the presentation i prepared...
+        <a href="">Learn more…</a>
+    </li>
+
+</ol>
