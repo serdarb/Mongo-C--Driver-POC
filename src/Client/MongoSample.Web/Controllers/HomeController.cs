@@ -18,8 +18,6 @@ namespace MongoSample.Web.Controllers
 
         public ActionResult Index()
         {
-
-
             ViewBag.Message = "Sample ASP.NET MVC application POC with MongoDB.";
 
             return View();
@@ -43,7 +41,6 @@ namespace MongoSample.Web.Controllers
             var model = new BasketModel { Items = _basketService.Get("test@test.com") };
 
             return View(model);
-
         }
 
         [HttpPost]
@@ -52,12 +49,25 @@ namespace MongoSample.Web.Controllers
             if (id == "clear")
             {
                 _basketService.Clear("test@test.com");
-            }           
+            }
 
             var model = new BasketModel { Items = _basketService.Get("test@test.com") };
 
             return View(model);
+        }
 
+        [HttpGet]
+        public ActionResult Stats() {
+            var amount = _basketService.MapReduceSum();
+            var count = _basketService.MapReduceCount();
+
+            var model = new StatsModel
+            {
+                ItemCount = count,
+                AmountTotal =amount
+            };
+
+            return this.View(model);
         }
     }
 }

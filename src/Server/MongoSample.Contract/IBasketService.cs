@@ -16,5 +16,9 @@
         List<BasketItemDto> Get(string email);
         [OperationContract]
         bool Clear(string email);
+        [OperationContract]
+        double MapReduceCount();
+        [OperationContract]
+        double MapReduceSum();
     }
 }
